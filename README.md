@@ -21,3 +21,54 @@ A tiny DOM manipulation exercise: render a heading, two buttons (**Turn On** / *
 2. Open `index.html` directly in your browser (no server required).
 
 ## File Structure
+.
+├── index.html
+└── scriptt.js
+
+
+## Core Logic (excerpt)
+```js
+let head = document.createElement("h1");
+document.body.appendChild(head);
+head.textContent = "hello dinesh";
+
+let buttonOn = document.createElement("button");
+document.body.appendChild(buttonOn);
+buttonOn.textContent = "Turn On";
+
+let buttonOff = document.createElement("button");
+document.body.appendChild(buttonOff);
+buttonOff.textContent = "Turn Off";
+
+let img = document.createElement("img");
+document.body.appendChild(img);
+img.style.width = "150px";
+img.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+
+buttonOn.onclick = () => {
+  img.src = "https://www.w3schools.com/js/pic_bulbon.gif";
+};
+
+buttonOff.onclick = () => {
+  img.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+};
+
+What I Practiced / Learned
+
+Creating and appending elements with document.createElement and appendChild
+
+Setting content via element.textContent
+
+Handling click events with .onclick
+
+Changing attributes (img.src) dynamically
+
+Possible Improvements
+
+Combine into a single toggle button
+
+Add keyboard accessibility (Enter/Space to toggle)
+
+Style buttons to look like a switch
+
+Preload images to avoid flicker
